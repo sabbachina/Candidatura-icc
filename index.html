@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Riccardo Sabbadini - ICC Candidatura</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 20px;
+            animation: gradientShift 15s ease infinite;
+            background-size: 200% 200%;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .page {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: linear-gradient(135deg, #e0f7ff 0%, #cfe9ff 100%);
+            padding: 60px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero {
+            text-align: center;
+            margin-bottom: 50px;
+            padding-bottom: 40px;
+            border-bottom: 3px solid #667eea;
+            animation: fadeIn 1s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .hero h1 {
+            font-size: 56px;
+            font-weight: 900;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            letter-spacing: -1px;
+            animation: slideInFromTop 0.8s ease-out;
+        }
+        
+        @keyframes slideInFromTop {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero .tagline {
+            font-size: 22px;
+            color: #2a5298;
+            margin-bottom: 30px;
+            font-weight: 600;
+            animation: slideInFromTop 0.8s ease-out 0.2s both;
+        }
+        
+        .metrics {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 30px;
+        }
+        
+        .metric {
+            text-align: center;
+            animation: popIn 0.6s ease-out both;
+        }
+        
+        .metric:nth-child(1) { animation-delay: 0.4s; }
+        .metric:nth-child(2) { animation-delay: 0.5s; }
+        .metric:nth-child(3) { animation-delay: 0.6s; }
+        .metric:nth-child(4) { animation-delay: 0.7s; }
+        
+        @keyframes popIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .metric-number {
+            font-size: 48px;
+            font-weight: 900;
+            color: #667eea;
+            display: block;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .metric:hover .metric-number {
+            transform: scale(1.15);
+        }
+        
+        .metric-label {
+            font-size: 14px;
+            color: #1e3c72;
+            margin-top: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .why-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            margin-bottom: 50px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+            animation: slideInFromLeft 0.8s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .why-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .why-section h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-weight: 900;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .why-section h3 {
+            font-size: 22px;
+            margin-bottom: 12px;
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .why-section p {
+            font-size: 17px;
+            line-height: 1.8;
+            font-weight: 400;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .mission-vision-separator {
+            margin-bottom: 25px;
+        }
+        
+        .section {
+            margin-bottom: 50px;
+            animation: fadeInUp 0.8s ease-out both;
+        }
+        
+        .section:nth-of-type(1) { animation-delay: 0.2s; }
+        .section:nth-of-type(2) { animation-delay: 0.3s; }
+        .section:nth-of-type(3) { animation-delay: 0.4s; }
+        .section:nth-of-type(4) { animation-delay: 0.5s; }
+        .section:nth-of-type(5) { animation-delay: 0.6s; }
+        .section:nth-of-type(6) { animation-delay: 0.7s; }
+        
+        .section h2 {
+            font-size: 32px;
+            color: #1e3c72;
+            margin-bottom: 30px;
+            font-weight: 900;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .section h2::before {
+            content: '';
+            width: 6px;
+            height: 40px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 3px;
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                height: 0;
+                opacity: 0;
+            }
+            to {
+                height: 40px;
+                opacity: 1;
+            }
+        }
+        
+        .cards-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .card {
+            background: white;
+            padding: 35px;
+            border-radius: 15px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: slideInFromBottom 0.6s ease-out both;
+        }
+        
+        @keyframes slideInFromBottom {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.3);
+            border-left-width: 8px;
+        }
+        
+        .card h3 {
+            font-size: 20px;
+            color: #1e3c72;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+        
+        .card p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.7;
+        }
+        
+        .competenze-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        
+        .competenza-box {
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            animation: scaleIn 0.6s ease-out both;
+        }
+        
+        @keyframes scaleIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .competenza-box:hover {
+            transform: scale(1.08) rotate(2deg);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.25);
+        }
+        
+        .competenza-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+            display: inline-block;
+            animation: bounce 2s ease-in-out infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .competenza-box:hover .competenza-icon {
+            animation: spin 0.6s ease-in-out;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg) scale(1); }
+            50% { transform: rotate(180deg) scale(1.2); }
+            100% { transform: rotate(360deg) scale(1); }
+        }
+        
+        .competenza-title {
+            font-size: 16px;
+            font-weight: 700;
+            color: #1e3c72;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .competenza-desc {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .timeline {
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+        
+        .timeline-item {
+            position: relative;
+            margin-bottom: 35px;
+            padding-left: 35px;
+            animation: slideInFromRight 0.6s ease-out both;
+        }
+        
+        .timeline-item:nth-child(1) { animation-delay: 0.1s; }
+        .timeline-item:nth-child(2) { animation-delay: 0.2s; }
+        .timeline-item:nth-child(3) { animation-delay: 0.3s; }
+        .timeline-item:nth-child(4) { animation-delay: 0.4s; }
+        .timeline-item:nth-child(5) { animation-delay: 0.5s; }
+        .timeline-item:nth-child(6) { animation-delay: 0.6s; }
+        
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -48px;
+            top: 8px;
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 50%;
+            border: 4px solid #e0f7ff;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                box-shadow: 0 0 0 0 rgba(102, 126, 234, 0.7);
+            }
+            50% {
+                box-shadow: 0 0 0 10px rgba(102, 126, 234, 0);
+            }
+        }
+        
+        .timeline-item h4 {
+            font-size: 18px;
+            color: #1e3c72;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item p {
+            font-size: 15px;
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        .skills-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        .skill-tag {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 14px;
+            font-weight: 600;
+            display: inline-block;
+            animation: fadeInScale 0.5s ease-out both;
+            transition: all 0.3s ease;
+        }
+        
+        .skill-tag:nth-child(1) { animation-delay: 0.1s; }
+        .skill-tag:nth-child(2) { animation-delay: 0.15s; }
+        .skill-tag:nth-child(3) { animation-delay: 0.2s; }
+        .skill-tag:nth-child(4) { animation-delay: 0.25s; }
+        .skill-tag:nth-child(5) { animation-delay: 0.3s; }
+        .skill-tag:nth-child(6) { animation-delay: 0.35s; }
+        .skill-tag:nth-child(7) { animation-delay: 0.4s; }
+        .skill-tag:nth-child(8) { animation-delay: 0.45s; }
+        .skill-tag:nth-child(9) { animation-delay: 0.5s; }
+        .skill-tag:nth-child(10) { animation-delay: 0.55s; }
+        .skill-tag:nth-child(11) { animation-delay: 0.6s; }
+        .skill-tag:nth-child(12) { animation-delay: 0.65s; }
+        .skill-tag:nth-child(13) { animation-delay: 0.7s; }
+        .skill-tag:nth-child(14) { animation-delay: 0.75s; }
+        .skill-tag:nth-child(15) { animation-delay: 0.8s; }
+        
+        @keyframes fadeInScale {
+            from {
+                opacity: 0;
+                transform: scale(0.5);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .skill-tag:hover {
+            transform: scale(1.15) rotate(-2deg);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+        }
+        
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 30px;
+            border-top: 2px solid #667eea;
+        }
+        
+        .footer h3 {
+            font-size: 24px;
+            color: #1e3c72;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+        
+        .footer p {
+            font-size: 16px;
+            color: #2a5298;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+        
+        .linkedin-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: linear-gradient(135deg, #0077b5 0%, #005582 100%);
+            color: white;
+            padding: 15px 35px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-size: 16px;
+            font-weight: 700;
+            margin-top: 20px;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            box-shadow: 0 5px 15px rgba(0, 119, 181, 0.3);
+            animation: bounceIn 1s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        .linkedin-btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.2);
+            transition: left 0.5s ease;
+        }
+        
+        .linkedin-btn:hover::before {
+            left: 100%;
+        }
+        
+        .linkedin-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(0, 119, 181, 0.5);
+        }
+        
+        .linkedin-icon {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            transition: transform 0.3s ease;
+        }
+        
+        .linkedin-btn:hover .linkedin-icon {
+            transform: rotate(360deg) scale(1.2);
+        }
+        
+        strong {
+            font-weight: 700;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <div class="hero">
+            <h1>RICCARDO SABBADINI</h1>
+            <p class="tagline">Project Manager AI & IoT @ ADR | PhD AI @ LUISS | Teaching Assistant ML & AI</p>
+            <div class="metrics">
+                <div class="metric">
+                    <span class="metric-number">414</span>
+                    <span class="metric-label">Citazioni</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">H-10</span>
+                    <span class="metric-label">H-Index</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">15+</span>
+                    <span class="metric-label">Pubblicazioni IEEE</span>
+                </div>
+                <div class="metric">
+                    <span class="metric-number">3</span>
+                    <span class="metric-label">Anni Startup</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="why-section">
+            <h2>Mission & Vision</h2>
+            <div class="mission-vision-separator">
+                <h3>Mission - Chi Sono Oggi</h3>
+                <p>Porto un mix unico di competenze per l'innovazione: <strong>414 citazioni scientifiche (H-index 10)</strong> che dimostrano impatto internazionale. <strong>3 anni in HEREMOS</strong> (spinoff Campus Bio-Medico) come Research Engineer e <strong>Key Person</strong> con pitch a fondi e acceleratori. Oggi come <strong>PM AI & IoT in ADR</strong> nella divisione BI, implemento <strong>processi innovativi di ML</strong> e valorizzo i <strong>dati IoT</strong> sulla nuova piattaforma sviluppata - sono un <strong>tech enthusiast</strong>. Come <strong>Teaching Assistant LUISS in ML e AI</strong> guido studenti universitari e in passato come Esperto di AI ho guidato dipendenti di <strong>EY, ENEL, Leonardo, Bain & Company</strong> nei progetti di MBA.</p>
+            </div>
+            <div>
+                <h3>Vision - Il Mio Contributo a ICC</h3>
+                <p>Voglio rendere ADR un punto di riferimento nell'ecosistema innovazione italiano e internazionale. I miei <strong>3 anni in startup come Key Person</strong> mi danno un vantaggio unico: <strong>sono stato dall'altro lato</strong>. Ho imparato a valutare il lavoro delle startup dall'interno, so identificare i punti deboli in modo efficace e riconoscere quali hanno le basi per il successo. Questo mi rende ideale per fare <strong>scouting</strong> - capisco cosa distingue una promessa da un progetto solido. Con ICC amplificherò l'impatto: identificando startup ad alto potenziale con occhio critico, costruendo partnership strategiche con acceleratori e fondi, e trasformando tecnologie emergenti in competitive advantage misurabile per ADR.</p>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Il Mio Valore per ICC</h2>
+            <div class="cards-3">
+                <div class="card">
+                    <h3>Track Record Scientifico di Impatto</h3>
+                    <p><strong>15+ pubblicazioni</strong> su riviste IEEE e Scientific Reports. <strong>414 citazioni</strong> con H-index 10 e i10-index 10 dimostrano riconoscimento internazionale. <strong>Review Editor</strong> per Frontiers in Digital Health. <strong>Organizing Committee</strong> per conferenze IEEE (I2MTC, MetroInd4.0, ANT). Esperienza di ricerca all'<strong>EPFL Svizzera</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Ecosistema Startup e Investitori</h3>
+                    <p><strong>3 anni in HEREMOS</strong> (spinoff Campus Bio-Medico) come Research Engineer e <strong>Key Person</strong>: sviluppo di wearable medicali innovativi + esperienza diretta con pitch a <strong>fondi e acceleratori</strong> nazionali e internazionali, <strong>family office</strong> e aziende per progettualità congiunte. Esperienza in <strong>NATO project SPS-5731</strong>.</p>
+                </div>
+                <div class="card">
+                    <h3>Project Management AI & IoT in ADR</h3>
+                    <p>Nella <strong>divisione Business Intelligence</strong>, implemento <strong>processi innovativi di Machine Learning</strong> per portare valore all'azienda. Valorizzo i <strong>dati IoT</strong> attraverso la nuova piattaforma sviluppata. Tech enthusiast. <strong>IEEE Ambassador Region 8</strong>. <strong>Visiting PhD</strong> presso UiT Arctic University (Norvegia).</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Competenze Chiave per ICC</h2>
+            <div class="competenze-grid">
+                <div class="competenza-box">
+                    <div class="competenza-icon">💪</div>
+                    <div class="competenza-title">Boldness</div>
+                    <p class="competenza-desc">Ex pallanuotista e coach: leadership testata. <strong>Premi multipli MUN</strong> per public speaking. <strong>Key Person e team leader</strong> in HEREMOS con pitch davanti a commissioni di investitori, <strong>fondi internazionali, family office</strong> e aziende per progettualità congiunte.</p>
+                </div>
+                <div class="competenza-box">
+                    <div class="competenza-icon">💰</div>
+                    <div class="competenza-title">Financial Acumen</div>
+                    <p class="competenza-desc"><strong>3 anni</strong> come Key Person in startup: esperienza diretta con fondi e acceleratori nazionali/internazionali. <strong>Ho rappresentato la startup</strong> davanti a fondi internazionali e family office. <strong>Borsa Fondazione Baroni</strong> "Giovani ricercatori".</p>
+                </div>
+                <div class="competenza-box">
+                    <div class="competenza-icon">📋</div>
+                    <div class="competenza-title">Project Management</div>
+                    <p class="competenza-desc"><strong>PM in ADR</strong> divisione BI: processi ML innovativi. <strong>Team leader</strong> in progetti startup con responsabilità di gestione team e progettualità congiunte con aziende. <strong>Lead WP</strong> NATO SPS-5731. <strong>OC</strong> 6+ conferenze IEEE.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Percorso Professionale</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h4>Project Manager AI & IoT @ Aeroporti di Roma (Feb 2025 - Presente)</h4>
+                    <p>Nella divisione Business Intelligence, implemento processi innovativi di Machine Learning per portare valore all'azienda. Valorizzo i dati IoT attraverso la nuova piattaforma che abbiamo sviluppato. Tech enthusiast che trasforma LLM, IoT e ML in soluzioni concrete per ottimizzare le operazioni aeroportuali.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>PhD Candidate in AI @ LUISS Guido Carli (Feb 2023 - Presente)</h4>
+                    <p>National program in AI applicata a Health and Life Sciences. Teaching Assistant in Machine Learning e AI: guido studenti universitari. In passato come Esperto di AI ho guidato dipendenti di grandi aziende (EY, ENEL, Leonardo, Bain & Company) nell'implementazione di soluzioni AI nell'ambito dei progetti di MBA.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Research Engineer & Key Person @ HEREMOS S.r.l. (Lug 2022 - Feb 2025)</h4>
+                    <p>3 anni in spinoff innovativa Campus Bio-Medico: sviluppo di wearable devices medicali con algoritmi di ML. Key Person con responsabilità di pitch davanti a fondi e acceleratori nazionali e internazionali, family office e aziende per progettualità congiunte.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Research Fellow @ Università degli Studi di Firenze (Ott 2019 - 2024)</h4>
+                    <p>Lead WP 1.7.3 del NATO project SPS-5731. Coordinamento con stakeholder internazionali per lo sviluppo di soluzioni innovative di data analysis e monitoring systems.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Research Engineer @ Università degli Studi di Napoli "Federico II" (Ott 2021 - Lug 2022)</h4>
+                    <p>Sviluppo di approcci AI per estrazione di parametri da sorgenti complesse. Implementazione di algoritmi di ML per analisi real-time di dati fisiologici.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Research Fellow @ Università Campus Bio-Medico di Roma (Mag 2019 - Dic 2021)</h4>
+                    <p>Design e implementazione di sistemi di sensing tessili per monitoraggio real-time. Sviluppo di modelli di risk assessment con machine learning e validazione attraverso trial clinici.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Technical Skills</h2>
+            <div class="skills-tags">
+                <span class="skill-tag">Python</span>
+                <span class="skill-tag">Machine Learning</span>
+                <span class="skill-tag">Deep Learning</span>
+                <span class="skill-tag">IoT</span>
+                <span class="skill-tag">Large Language Models</span>
+                <span class="skill-tag">Project Management</span>
+                <span class="skill-tag">PyTorch</span>
+                <span class="skill-tag">NLP</span>
+                <span class="skill-tag">Computer Vision</span>
+                <span class="skill-tag">Business Intelligence</span>
+                <span class="skill-tag">Generative AI</span>
+                <span class="skill-tag">LangChain</span>
+                <span class="skill-tag">Data Science</span>
+                <span class="skill-tag">Statistical Analysis</span>
+                <span class="skill-tag">R&D Coordination</span>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>Il Mio Contributo Distintivo</h2>
+            <div class="cards-3">
+                <div class="card">
+                    <h3>Ponte tra Tecnico, Business e Investitori</h3>
+                    <p>Come Teaching Assistant LUISS in ML e AI guido studenti universitari, e in passato come Esperto di AI ho guidato professionisti di grandi aziende durante gli MBA nell'implementazione pratica di soluzioni AI. <strong>3 anni in startup come Key Person</strong> tra pitch, fondi e acceleratori. Leadership da sport (pallanuoto). <strong>Premi multipli MUN</strong> per public speaking. So presentare idee complesse con impatto e tradurre complessità tecnologica in valore aziendale.</p>
+                </div>
+                <div class="card">
+                    <h3>Approccio Data-Driven con Impatto Reale</h3>
+                    <p>15 pubblicazioni peer-reviewed su riviste top. 414 citazioni con H-index 10 dimostrano che le mie soluzioni hanno impatto riconosciuto a livello internazionale. Approccio scientifico rigoroso applicato a problemi business reali.</p>
+                </div>
+                <div class="card">
+                    <h3>Esperto di Knowledge Transfer</h3>
+                    <p><strong>Teaching Assistant in 3 università</strong> (LUISS, Campus Bio-Medico, Luiss Business School). <strong>Review Editor</strong> per Frontiers in Digital Health. <strong>Organizing Committee</strong> in 6+ conferenze internazionali IEEE. Esperto nel trasferire conoscenze complesse a diversi stakeholder: accademici, studenti, professionisti aziendali.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <h3>Riccardo Sabbadini</h3>
+            <p>Innovation Cabin Crew - Candidatura 2025</p>
+            <p>Building the future, one algorithm at a time</p>
+            <a href="https://www.linkedin.com/in/riccardo-sabbadini-19636090/" target="_blank" class="linkedin-btn">
+                <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                </svg>
+                Visualizza il mio profilo LinkedIn
+            </a>
+        </div>
+    </div>
+</body>
+</html>
